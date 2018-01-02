@@ -67,11 +67,13 @@ This will **cause html minification** and it will also **disable the ejs fallbac
 ```js
 {
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.html$/,
-        loader: 'html-loader'
-      }],
+        use: [{
+          loader: 'html-loader'
+        }]
+      }]
   },
   plugins: [
     new HtmlWebpackPlugin({
